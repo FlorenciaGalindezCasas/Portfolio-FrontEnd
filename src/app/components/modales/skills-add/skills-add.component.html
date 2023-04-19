@@ -1,0 +1,63 @@
+<div class="modal fade" id="skillsAdd" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <form [formGroup]="skillsAddForm" (ngSubmit)="onSubmit($event)">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5">Añadir skill:</h1>
+        </div>
+        <div class="modal-body">
+          <label for="skillInput" class="form-label">Titulo:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="skillInput"
+            formControlName="titulo"
+          />
+          <div *ngIf="Titulo?.errors && Titulo?.touched">
+            <p *ngIf="Titulo?.hasError('required')" class="error">
+              El titulo es requerido.
+            </p>
+          </div>
+
+          <label for="skillInput" class="form-label">Icono:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="skillInput"
+            formControlName="icono"
+          />
+          <div *ngIf="Icono?.errors && Icono?.touched">
+            <p *ngIf="Icono?.hasError('required')" class="error">
+              El icono es requerido.
+            </p>
+          </div>
+
+          <label for="skillInput" class="form-label">Porcentaje:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="skillInput"
+            formControlName="porcentaje"
+          />
+          <div *ngIf="Porcentaje?.errors && Porcentaje?.touched">
+            <p *ngIf="Porcentaje?.hasError('required')" class="error">
+              El porcentaje es requerido.
+            </p>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
+            (click)="index()"
+            (click)="clear()"
+          >
+            Cerrar
+          </button>
+          <button type="submit" class="btn btn-primary">Guardar cambios</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+
+<div class="contenedor container" id="header" *ngFor="let persona of personas">
+  <div class="banner">
+    <img src="{{ persona.banner }}" alt="" />
+  </div>
+  
+    <div class="perfil">
+      <div class="foto">
+        <img src="{{ persona.img }}" alt="fotoPerfil" />
+      </div>
+    </div>
+    <div id="btn">
+        <button
+          type="button"
+          (click)="modificarPersona(persona.id)"
+          *ngIf="logueado"
+          class="btn btn-edition"
+          data-bs-toggle="modal"
+          data-bs-target="#headerEdit"
+        >
+           <i class="fa fa-pencil"></i>
+        </button>
+      </div>
+    <div class="about">
+      <h2><b>{{ persona.nombreCompleto }}</b></h2>      
+      <h4>{{ persona.titulo }}</h4>
+      <h4>{{ persona.descripcion }}</h4>
+    </div>
+  </div>

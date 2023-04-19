@@ -1,0 +1,52 @@
+.banner img{
+    max-height: 40vh;
+    width: 100%;
+}
+
+.foto img{
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+
+.perfil{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.foto{
+    position: absolute;
+    margin: 5%;
+}
+
+.about{
+    padding: 50px 35px 35px 35px;
+}
+
+p{
+    margin: 0;
+    font-family: 'Questrial', sans-serif;
+}
+
+h2,h4{
+    font-family: 'Questrial', sans-serif;
+}
+
+
+#header{
+    padding: 0;
+}
+
+@media screen and (min-width:1024px) {
+    .foto img{
+    border-radius: 50%;
+    width: 130px;
+    height: 130px;
+}
+.about{
+    padding: 65px 50px 35px 50px;
+
+}
+    
+}

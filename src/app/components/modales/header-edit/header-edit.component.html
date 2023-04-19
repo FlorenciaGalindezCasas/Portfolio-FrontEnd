@@ -1,0 +1,88 @@
+<div class="modal fade" id="headerEdit" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <form [formGroup]="skillForm" (ngSubmit)="onSubmit($event)">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5">Editar perfil:</h1>
+        </div>
+        <div class="modal-body">
+          <label for="skillInput" class="form-label">Nombre completo:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="skillInput"
+            formControlName="nombreCompleto"
+          />
+          <div *ngIf="NombreCompleto?.errors && NombreCompleto?.touched">
+            <p *ngIf="NombreCompleto?.hasError('required')" class="error">
+              El Nombre es requerido.
+            </p>
+          </div>
+          <label for="skillInput" class="form-label">Imagen banner:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="skillInput"
+            formControlName="banner"
+          />
+          <div *ngIf="Banner?.errors && Banner?.touched">
+            <p *ngIf="Banner?.hasError('required')" class="error">
+              La imagen es requerida.
+            </p>
+          </div>
+
+          <label for="skillInput" class="form-label">Foto perfil:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="skillInput"
+            formControlName="img"
+          />
+          <div *ngIf="Img?.errors && Img?.touched">
+            <p *ngIf="Img?.hasError('required')" class="error">
+              La foto de perfil es requerida.
+            </p>
+          </div>
+
+          <label for="skillInput" class="form-label">Titulo:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="skillInput"
+            formControlName="titulo"
+          />
+          <div *ngIf="Titulo?.errors && Titulo?.touched">
+            <p *ngIf="Titulo?.hasError('required')" class="error">
+              El titulo es requerido.
+            </p>
+          </div>
+
+          <label for="skillInput" class="form-label">Descripcion:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="skillInput"
+            formControlName="descripcion"
+          />
+          <div *ngIf="Descripcion?.errors && Descripcion?.touched">
+            <p *ngIf="Descripcion?.hasError('required')" class="error">
+              La descripcion es requerida.
+            </p>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
+            (click)="index()"
+            (click)="clear()"
+          >
+            Cerrar
+          </button>
+          <button type="submit" class="btn btn-primary">Guardar cambios</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

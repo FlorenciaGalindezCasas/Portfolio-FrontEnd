@@ -1,0 +1,52 @@
+<div class="container-fluid">
+  <div class="container">
+    <div class="row">
+      <div class="col-9">
+        <h2><b>Skills</b></h2>
+      </div>
+      <div class="col-3" id="add">
+        <button
+          type="button"
+          *ngIf="logueado"
+          class="btn btn-edition"
+          data-bs-toggle="modal"
+          data-bs-target="#skillsAdd"
+          (click)="crearSkill()"
+        >
+          <i class="fa-solid fa-plus"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="contenedor container" *ngFor="let skill of skills">
+    <div class="btn-edit">
+      <button
+        type="button"
+        *ngIf="logueado"
+        (click)="modificarSkill(skill.id)"
+        class="btn btn-edition"
+        data-bs-toggle="modal"
+        data-bs-target="#skillsEdit"
+      >
+        <i class="fa fa-pencil"></i>
+      </button>
+
+      <button
+        type="button"
+        *ngIf="logueado"
+        class="btn btn-edition"
+        (click)="eliminarSkill(skill.id)"
+      >
+        <i class="fa-regular fa-trash-can"></i>
+      </button>
+    </div>
+    <div class="skill">
+      <h2>{{ skill.titulo }}<i class="fab {{ skill.icono }}"></i></h2>
+      <mat-progress-bar
+        mode="determinate"
+        value="{{ skill.porcentaje }}"
+      ></mat-progress-bar>
+    </div>
+  </div>
+</div>

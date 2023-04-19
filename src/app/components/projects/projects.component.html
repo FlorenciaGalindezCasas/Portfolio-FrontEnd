@@ -1,0 +1,58 @@
+<div class="container-fluid">
+  <div class="container">
+  <div class="row">
+    <div class="col-9">
+      <h2><b>Proyectos</b></h2>
+    </div>
+    <div class="col-3" id="add">
+      <button
+        type="button"
+        *ngIf="logueado"
+        class="btn btn-edition"
+        data-bs-toggle="modal"
+        data-bs-target="#proyectosAdd"
+        (click)="crearProyecto()"
+      >
+        <i class="fa-solid fa-plus"></i>
+      </button>
+    </div>
+  </div>
+  </div>
+
+
+  <div class="contenedor container" *ngFor="let proyecto of proyectos">
+    <div class="btn-edit">
+      <button
+        type="button"
+        *ngIf="logueado"
+        (click)="modificarProyecto(proyecto.id)"
+        class="btn btn-edition"
+        data-bs-toggle="modal"
+        data-bs-target="#proyectosEdit"
+      >
+         <i class="fa fa-pencil"></i>
+      </button>
+
+      <button
+        type="button"
+        *ngIf="logueado"
+        class="btn btn-edition"
+        (click)="eliminarProyecto(proyecto.id)"
+      >
+        <i class="fa-regular fa-trash-can"></i>
+      </button>
+    </div>
+    <div class="proyecto">
+      <h2>{{ proyecto.titulo }}</h2>
+      <div>
+    <div class="des">
+      <img src="{{ proyecto.imagen }}" alt="" />
+      <p>{{ proyecto.descripcion }}</p>
+      </div>
+    </div>
+      <a href="{{ proyecto.link }}" target="_blank"
+        ><h5>Repositorio github</h5></a
+      >
+    </div>
+  </div>
+</div>

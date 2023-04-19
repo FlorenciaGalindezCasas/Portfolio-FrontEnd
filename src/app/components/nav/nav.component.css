@@ -1,0 +1,59 @@
+.navbar{
+     border-bottom: 3px solid rgba(235, 234, 231, 0.421);
+}
+
+.navbar img{
+    width: 9rem;
+}
+
+.botones{
+    text-align: center;
+}
+
+.login{
+    margin-top: 2%;
+    width: 100%;
+    border: 1px solid #e0e3e5ad;
+    border-radius: 5px;
+    color: black;
+}
+
+.nav-link{
+    padding: 3%;
+}
+
+.redes{
+     border-bottom: 2px solid rgba(235, 234, 231, 0.421);
+}
+
+a{
+    color: black;
+}
+
+i{
+    padding-right: 1rem;
+}
+
+.login:hover, .login:active{
+    border: 4px solid #e0e3e5ad;
+}
+
+
+@media screen and (min-width: 768px) {
+    .botones{
+        display: flex;
+        justify-content: right;
+    }
+    
+    .login{
+        margin: 0px 20px 0px 60px;
+        width: 120px;
+    }
+
+    .login:hover, .login:active{
+        width: 120px;
+    }
+    .redes{
+        border:none;
+    }
+}

@@ -1,0 +1,26 @@
+#edu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#educacion {
+  padding-left: 5%;
+}
+
+#logoedu {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  padding-right: 5%;
+}
+
+#logoedu img {
+  min-width: 6rem;
+  max-height: 6rem;
+}
+
+h2{
+  font-family: 'Questrial', sans-serif;
+}
+

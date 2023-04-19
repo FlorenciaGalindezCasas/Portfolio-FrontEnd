@@ -1,0 +1,61 @@
+
+<div class="conta-fluid">
+  <img src="./assets/images/logo.png" alt="logo"/>
+<form #f="ngForm" (ngSubmit)="onLogin()" novalidate>
+  <div class="container">
+    <h1><b>INGRESAR AL PORTFOLIO</b></h1>
+    <div class="inputs">
+      <label for="userName" class="col-sm-2 col-form-label">Usuario</label>
+      <div class="col-sm-12">
+        <input
+          type="text"
+          class="form-box"
+          id="userName"
+          name="userName"
+          placeholder="Ingrese nombre de usuario"
+          [(ngModel)]="userName"
+          required
+        />
+      </div>
+
+      <label for="password" class="col-sm-2 col-form-label">Password</label>
+      <div class="col-sm-12">
+        <input
+          type="password"
+          class="form-box"
+          id="password"
+          name="password"
+          placeholder="Ingrese password"
+          [(ngModel)]="password"
+          required
+        />
+      </div>
+      </div>
+    
+    <div class="boton">
+      <button type="submit" class="btn">Login</button>
+    </div>
+  </div>
+</form>
+</div>
+<div class="col-12">
+ <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" href="https://github.com/FlorenciaGalindezCasas" target="_blank">
+                <i class="fa-brands fa-github"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="https://www.linkedin.com/in/florenciagalindezcasas/" target="_blank">
+                <i class="fa-brands fa-linkedin"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="https://www.instagram.com/florenciagalindezcasas/" target="_blank">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+        </li>
+    </ul> 
+    </div> 
+
+

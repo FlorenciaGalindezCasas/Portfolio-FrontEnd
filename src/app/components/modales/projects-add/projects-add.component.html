@@ -1,0 +1,76 @@
+<div class="modal fade" id="proyectosAdd" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <form [formGroup]="proyectosAddForm" (ngSubmit)="onSubmit($event)">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5">Añadir proyecto:</h1>
+        </div>
+        <div class="modal-body">
+          <label for="skillInput" class="form-label">Imagen:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="skillInput"
+            formControlName="imagen"
+          />
+          <div *ngIf="Imagen?.errors && Imagen?.touched">
+            <p *ngIf="Imagen?.hasError('required')" class="error">
+              La imagen es requerida.
+            </p>
+          </div>
+
+          <label for="skillInput" class="form-label">Titulo:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="skillInput"
+            formControlName="titulo"
+          />
+          <div *ngIf="Titulo?.errors && Titulo?.touched">
+            <p *ngIf="Titulo?.hasError('required')" class="error">
+              El titulo es requerido.
+            </p>
+          </div>
+
+          <label for="skillInput" class="form-label">Descripcion:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="skillInput"
+            formControlName="descripcion"
+          />
+          <div *ngIf="Descripcion?.errors && Descripcion?.touched">
+            <p *ngIf="Descripcion?.hasError('required')" class="error">
+              La descripcion es requerida.
+            </p>
+          </div>
+
+          <label for="skillInput" class="form-label">Link:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="skillInput"
+            formControlName="link"
+          />
+          <div *ngIf="Link?.errors && Link?.touched">
+            <p *ngIf="Link?.hasError('required')" class="error">
+              El link es requerido.
+            </p>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
+            (click)="index()"
+            (click)="clear()"
+          >
+            Cerrar
+          </button>
+          <button type="submit" class="btn btn-primary">Guardar cambios</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

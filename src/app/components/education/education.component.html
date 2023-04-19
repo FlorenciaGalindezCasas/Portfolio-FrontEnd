@@ -1,0 +1,55 @@
+<div class="container-fluid">
+  <div class="container">
+  <div class="row">
+    <div class="col-9">
+      <h2><b>Educación</b></h2>
+    </div>
+    <div class="col-3" id="add">
+      <button
+        type="button"
+        *ngIf="logueado"
+        class="btn btn-edition"
+        data-bs-toggle="modal"
+        data-bs-target="#educacionAdd"
+        (click)="crearEducacion()"
+      >
+        <i class="fa-solid fa-plus"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+  <div class="contenedor container" *ngFor="let edu of educacion">
+    <div class="btn-edit">
+      <button
+        type="button"
+        *ngIf="logueado"
+        (click)="modificarEducacion(edu.id)"
+        class="btn btn-edition"
+        data-bs-toggle="modal"
+        data-bs-target="#educacionEdit"
+      >
+        <i class="fa fa-pencil"></i>
+      </button>
+
+      <button
+        type="button"
+        *ngIf="logueado"
+        class="btn btn-edition"
+        (click)="eliminarEducacion(edu.id)"
+      >
+        <i class="fa-regular fa-trash-can"></i>
+      </button>
+    </div>
+    <div class="row" id="edu">
+      <div class="col-7" id="educacion">
+        <h2>{{ edu.titulo }}</h2>
+        <p>{{ edu.inicio }} / {{ edu.estado }}</p>
+        <p>{{ edu.institucion }}</p>
+      </div>
+      <div class="col-5" id="logoedu">
+        <img src="{{ edu.logo }}" alt="" />
+      </div>
+    </div>
+  </div>
+</div>
