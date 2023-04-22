@@ -17,7 +17,6 @@ import { EducationComponent } from './components/education/education.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { EducationEditComponent } from './components/modales/education-edit/education-edit.component';
 import { HeaderEditComponent } from './components/modales/header-edit/header-edit.component';
-import { NavEditComponent } from './components/modales/nav-edit/nav-edit.component';
 import { ProjectsEditComponent } from './components/modales/projects-edit/projects-edit.component';
 import { EducationAddComponent } from './components/modales/education-add/education-add.component';
 import { ProjectsAddComponent } from './components/modales/projects-add/projects-add.component';
@@ -25,6 +24,7 @@ import { SkillsAddComponent } from './components/modales/skills-add/skills-add.c
 import { SkillsEditComponent } from './components/modales/skills-edit/skills-edit.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { interceptorProvider } from './services/interceptor.service';
+
 
 @NgModule({
   declarations: [
@@ -40,7 +40,6 @@ import { interceptorProvider } from './services/interceptor.service';
     ModalComponent,
     EducationEditComponent,
     HeaderEditComponent,
-    NavEditComponent,
     ProjectsEditComponent,
     EducationAddComponent,
     ProjectsAddComponent,

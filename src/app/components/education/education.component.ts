@@ -36,7 +36,7 @@ export class EducationComponent implements OnInit {
   }
 
   crearEducacion() {
-    this.router.navigate(['educacion/agregar']);
+    // this.router.navigate(['educacion/agregar']);
   }
 
   modificarEducacion(id: number) {
@@ -50,6 +50,7 @@ export class EducationComponent implements OnInit {
       );
     });
     setTimeout(() => {
+      alert('Educacion eliminada');
       window.location.reload();
     }, 0);
   }

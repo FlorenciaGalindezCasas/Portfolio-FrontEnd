@@ -60,22 +60,19 @@ export class ProjectsEditComponent {
       .subscribe((data) => {
         console.log(data);
       });
-
-    this.router.navigate(['/']);
+      window.location.reload();
+     alert('Proyecto modificado.');
   }
 
-  onSubmit(event: Event) {
-    event.preventDefault;
+  onSubmit() {
 
     if (this.proyectosForm.valid) {
       this.updateProyecto();
-      window.location.reload();
-      alert('Proyecto modificado.');
+      window.location.reload();      
     } else {
-      this.proyectosForm.markAllAsTouched();
+      this.updateProyecto();
+      window.location.reload();
+      // this.proyectosForm.markAllAsTouched();
     }
-  }
-  index() {
-    this.router.navigate(['home']);
   }
 }

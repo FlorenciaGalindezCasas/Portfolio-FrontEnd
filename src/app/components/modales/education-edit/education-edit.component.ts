@@ -62,22 +62,19 @@ export class EducationEditComponent {
     this.data = this.educacionForm.value;
     this.educacionService
       .modificarEducacion(this.educacion?.id, this.data)
-      .subscribe((data) => {
-        console.log(data);
-      });
-
-    this.router.navigate(['/']);
+      .subscribe((data) => {});
+    window.location.reload();
+    alert('Educacion modificada.');
   }
 
-  onSubmit(event: Event) {
-    event.preventDefault;
+  onSubmit() {
 
     if (this.educacionForm.valid) {
       this.updateEducacion();
       window.location.reload();
-      alert('Educacion modificada.');
     } else {
-      this.educacionForm.markAllAsTouched();
+      this.updateEducacion();
+      window.location.reload();
     }
   }
   index() {

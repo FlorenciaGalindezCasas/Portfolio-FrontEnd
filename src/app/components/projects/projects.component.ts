@@ -35,7 +35,7 @@ export class ProjectsComponent implements OnInit {
   }
 
   crearProyecto() {
-    this.router.navigate(['proyectos/agregar']);
+    // this.router.navigate(['proyectos/agregar']);
   }
 
   modificarProyecto(id: number) {
@@ -49,6 +49,7 @@ export class ProjectsComponent implements OnInit {
       );
     });
     setTimeout(() => {
+      alert('Proyecto eliminado');
       window.location.reload();
     }, 0);
   }

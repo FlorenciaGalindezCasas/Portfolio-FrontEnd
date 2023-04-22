@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import {
-  FormBuilder,
   FormControl,
   FormGroup,
   Validators,
@@ -31,7 +30,7 @@ export class HeaderEditComponent {
     });
   }
 
-  skillForm = new FormGroup({
+  headerForm = new FormGroup({
     nombreCompleto: new FormControl('', [Validators.required]),
     titulo: new FormControl('', [Validators.required]),
     banner: new FormControl('', [Validators.required]),
@@ -39,26 +38,26 @@ export class HeaderEditComponent {
     descripcion: new FormControl('', [Validators.required]),
   });
   get NombreCompleto() {
-    return this.skillForm.get('nombreCompleto');
+    return this.headerForm.get('nombreCompleto');
   }
   get Titulo() {
-    return this.skillForm.get('titulo');
+    return this.headerForm.get('titulo');
   }
   get Banner() {
-    return this.skillForm.get('banner');
+    return this.headerForm.get('banner');
   }
   get Img() {
-    return this.skillForm.get('img');
+    return this.headerForm.get('img');
   }
   get Descripcion() {
-    return this.skillForm.get('descripcion');
+    return this.headerForm.get('descripcion');
   }
   clear(): void {
-    this.skillForm.reset();
+    this.headerForm.reset();
   }
 
   updatePersona(): void {
-    this.data = this.skillForm.value;
+    this.data = this.headerForm.value;
     this.personaService
       .modificarPersona(this.persona?.id, this.data)
       .subscribe((data) => {
@@ -71,12 +70,16 @@ export class HeaderEditComponent {
   onSubmit(event: Event) {
     event.preventDefault;
 
-    if (this.skillForm.valid) {
-      this.updatePersona();
-      window.location.reload();
+    if (this.headerForm.valid) {
       alert('Perfil modificado.');
+      this.updatePersona();
+      this.clear();
+      // window.location.reload();
     } else {
-      this.skillForm.markAllAsTouched();
+      // this.headerForm.markAllAsTouched();
+      alert('Perfil modificado.');
+      this.updatePersona();
+      this.clear();
     }
   }
   index() {

@@ -55,22 +55,18 @@ export class SkillsEditComponent {
       .subscribe((data) => {
         console.log(data);
       });
-
-    this.router.navigate(['/']);
+      window.location.reload();
+      alert('Skill modificada.'); 
   }
 
-  onSubmit(event: Event) {
+  onSubmit(event:Event) {   
     event.preventDefault;
-
     if (this.skillsForm.valid) {
       this.updateSkill();
       window.location.reload();
-      alert('Skill modificada.');
     } else {
-      this.skillsForm.markAllAsTouched();
+      this.updateSkill();
+      window.location.reload();
     }
-  }
-  index() {
-    this.router.navigate(['home']);
   }
 }

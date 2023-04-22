@@ -53,23 +53,25 @@ export class EducationAddComponent {
 
   createEducacion(): void {
     this.data = this.educacionAddForm.value;
-    this.educacionService.crearEducacion(this.data).subscribe((data) => {});
-    this.router.navigate(['/']);
+    this.educacionService.crearEducacion(this.data).subscribe((data) => {
+});
+    alert('Educacion añadida');
   }
 
-  onSubmit(event: Event) {
-    event.preventDefault;
+  onSubmit() {
 
     if (this.educacionAddForm.valid) {
-      this.createEducacion();
-      window.location.reload();
-      alert('Educacion añadida');
+      this.createEducacion(); 
+      window.location.reload();     
+      
     } else {
-      this.educacionAddForm.markAllAsTouched();
+      // this.educacionAddForm.markAllAsTouched();
+      this.createEducacion(); 
+      window.location.reload();      
     }
   }
   
-  index() {
-    this.router.navigate(['home']);
-  }
+  // index() {
+  //   this.router.navigate(['home']);
+  // }
 }

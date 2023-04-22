@@ -7,6 +7,7 @@ import { SkillsService } from 'src/app/services/skills.service';
   selector: 'app-skills-add',
   templateUrl: './skills-add.component.html',
   styleUrls: ['./skills-add.component.css'],
+  providers:[SkillsService]
 })
 export class SkillsAddComponent {
   data: any;
@@ -43,25 +44,20 @@ export class SkillsAddComponent {
 
   createSkill(): void {
     this.data = this.skillsAddForm.value;
-    this.skillsService.crearSkill(this.data).subscribe((data) => {
-      console.log(data);
-    });
-
-    this.router.navigate(['/']);
+    this.skillsService.crearSkill(this.data).subscribe((data) => {});
+    this.router.navigate(['habilidades/agregar']);
+    
+    alert('Skill añadida.');
   }
 
-  onSubmit(event: Event) {
-    event.preventDefault;
+  onSubmit() {
 
     if (this.skillsAddForm.valid) {
       this.createSkill();
       window.location.reload();
-      alert('Skill añadida.');
     } else {
-      this.skillsAddForm.markAllAsTouched();
+       this.createSkill();
+       window.location.reload();
     }
-  }
-  index() {
-    this.router.navigate(['home']);
   }
 }

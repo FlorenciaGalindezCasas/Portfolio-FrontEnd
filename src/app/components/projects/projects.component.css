@@ -34,6 +34,11 @@ a {
   text-decoration: none;
 }
 
+a:hover{
+  color:aliceblue;
+  transform: scale(1.5)
+}
+
 /* @media screen and (min-width: 1024px) {
   .proyecto{
     margin-left: 15%;

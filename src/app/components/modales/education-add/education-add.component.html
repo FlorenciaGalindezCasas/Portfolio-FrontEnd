@@ -1,7 +1,7 @@
 <div class="modal fade" id="educacionAdd" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
-      <form [formGroup]="educacionAddForm" (ngSubmit)="onSubmit($event)">
+      <form [formGroup]="educacionAddForm" (ngSubmit)="onSubmit()">
         <div class="modal-header">
           <h1 class="modal-title fs-5">Añadir educacion:</h1>
         </div>
@@ -76,8 +76,7 @@
             type="button"
             class="btn btn-secondary"
             data-bs-dismiss="modal"
-            (click)="index()"
-            (click)="clear()"
+                      (click)="clear()"
           >
             Cerrar
           </button>

@@ -10,3 +10,7 @@
 h2{
   font-family: 'Questrial', sans-serif;
 }
+
+.mat-mdc-progress-bar {
+    --mdc-linear-progress-active-indicator-color: rgb(60, 106, 65);
+}

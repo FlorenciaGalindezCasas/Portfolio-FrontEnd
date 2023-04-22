@@ -7,6 +7,7 @@ import { ProyectosService } from 'src/app/services/proyectos.service';
   selector: 'app-projects-add',
   templateUrl: './projects-add.component.html',
   styleUrls: ['./projects-add.component.css'],
+  providers:[ProyectosService]
 })
 export class ProjectsAddComponent {
   data: any;
@@ -49,24 +50,21 @@ export class ProjectsAddComponent {
   createProyecto(): void {
     this.data = this.proyectosAddForm.value;
     this.proyectosService.crearProyecto(this.data).subscribe((data) => {
-      console.log(data);
     });
-
-    this.router.navigate(['/']);
+    alert('Proyecto añadido.');
   }
 
-  onSubmit(event: Event) {
-    event.preventDefault;
-
+  onSubmit() {
+    
     if (this.proyectosAddForm.valid) {
       this.createProyecto();
       window.location.reload();
-      alert('Proyecto añadido.');
+      
     } else {
-      this.proyectosAddForm.markAllAsTouched();
+      // this.proyectosAddForm.markAllAsTouched();
+      this.createProyecto();
+      window.location.reload();
     }
   }
-  index() {
-    this.router.navigate(['home']);
-  }
+  
 }

@@ -36,7 +36,7 @@ export class SkillsComponent implements OnInit {
   }
 
   crearSkill() {
-    this.router.navigate(['habilidades/agregar']);
+    // this.router.navigate(['habilidades/agregar']);
   }
 
   modificarSkill(id: number) {
@@ -48,6 +48,7 @@ export class SkillsComponent implements OnInit {
       this.skills = this.skills?.filter((skills) => skills.id !== id);
     });
     setTimeout(() => {
+      alert('Skill eliminada');
       window.location.reload();
     }, 0);
   }
